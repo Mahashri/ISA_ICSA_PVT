@@ -32,12 +32,47 @@ header {
     flex-grow: 1; /* Allows the text to take up remaining space */
 }
 
-/* Center align the entire list */
-/* ul {
-    list-style-position: inside; /* Ensures bullets stay within text */
-    /* text-align: center; Centers text
-    padding: 0; Removes default padding
-} */
+/* Center the entire list vertically and horizontally */
+.list-wrapper {
+    display: flex;
+    top: 10px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    /* height: 100vh; Full height of the viewport */
+}
+
+/* Style the list */
+.list-container {
+    width: 50%; /* Adjust width to control text layout */
+    text-align: justify; /* Justify text inside the list */
+    list-style-position: outside; /* Ensures proper bullet alignment */
+    padding-left: 10px; /* Keeps bullets in place */
+}
+
+/* Ensure bullets are properly spaced */
+.list-container li {
+    
+    margin-bottom: 5px; /* Add space between items */
+}
+
+@media (max-width: 768px) {
+    .list-wrapper {
+        flex-direction: column; /* Stack items properly */
+        align-items: center; /* Center items */
+        text-align: center; /* Center list container */
+    }
+
+    .list-container {
+        width: 90%; /* Expand width for better readability */
+        /* text-align: justify; Ensure justified alignment */
+        padding-left: 15px; /* Adjust bullet alignment */
+    }
+
+    .list-container li {
+        margin-bottom: 8px; /* Add more space between items for better spacing */
+    }
+}
+
 
 /* Sections */
 section {
@@ -96,5 +131,101 @@ button:hover {
 
     button {
         font-size: 16px;
+    }
+}
+/* Founder Container */
+.founder-container {
+    background: white;
+    color: black;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Main Heading */
+.founder-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Content Wrapper (Desktop View) */
+.founder-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Image Section */
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image Styling */
+.image-section img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Founder Name */
+.founder-name {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Text Content */
+.text-content {
+    flex: 1;
+    text-align: left;
+}
+
+/* List Styling */
+.text-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.text-content li {
+    margin-bottom: 5px;
+}
+@media (max-width: 768px) {
+    .founder-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center content */
+        text-align: center; /* Center text for mobile */
+        gap: 0px;
+        padding: 25px;
+    }
+
+    .image-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Ensure full width */
+    }
+
+    .image-section img {
+        width: 80%; /* Reduce image size */
+        max-width: 250px; /* Prevent it from getting too large */
+        margin-bottom: 0; /* Remove extra gap below the image */
+    }
+
+    .text-content {
+        /* text-align: justify; Justify text alignment */
+        width: 90%; /* Reduce width for better readability */
+        
+    }
+
+    .text-content ul {
+        padding-left: 0; /* Remove extra padding */
+        list-style-position: inside; /* Keep bullet points aligned */
     }
 }

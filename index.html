@@ -12,8 +12,10 @@
     <!-- Header Section -->
     <header>
         <img src="Image (4)[1].png" alt="ISA ICSA Logo" class="logo">
-        <h1>ISA ICSA PRIVATE LIMITED</h1>
-        <p class="tagline">Ensuring Railway Safety & Compliance with Independent Safety Assessments</p>
+        <div class="header-text">
+            <h1>ISA ICSA PRIVATE LIMITED</h1>
+            <p class="tagline">Ensuring Railway Safety & Compliance with Independent Safety Assessments</p>
+        </div>
     </header>
 
     <!-- Under Construction Section -->
@@ -25,8 +27,17 @@
     <!-- About Us Section -->
     <section class="about">
         <h2>About Us</h2>
-        <p><strong>Who We Are:</strong> ISA ICSA Pvt. Ltd. is an Independent Safety Assessment (ISA) agency specializing in railway safety and compliance.</p>
-
+        <p><strong>Who We Are:</strong> </p>
+            <p> ICSA Pvt. Ltd. is an Independent Safety Assessment (ISA) agency <br> specializing in railway safety and compliance.</p>
+        <p><strong>What We Do:</strong></p>
+        <ul style="list-style-type: none;">
+            <li>Providing ISA services for railway projects</li>
+            <li>Safety verification & validation</li>
+            <li>Compliance with CENELEC & Indian railway standards</li>
+            <li>Railway signalling & system assurance services</li>
+        
+        </ul>
+        
         <img src="WhatsApp Image 2025-02-26 at 14.53.44_30a7b2bc.jpg">
         <h3>Founder and Director</h3>
         <p><strong>MR. SREENIVASA RAO GANAPA</strong></p>
@@ -52,6 +63,7 @@
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:isa2025@gmail.com">isa2025@gmail.com</a></p>
         <p>Phone: <a href="tel:+918147088162">+91 8147088162</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/company/105938267/admin/inbox/">Click Here</a> </p>
         <p>Address: #2 Floor 17/B1 Sector C, 1, KHB Yelahanka, Bengaluru -560064, Karnataka.</p>
     </section>
 
@@ -62,9 +74,38 @@
             <input type="text" id="name" placeholder="Your Name" required>
             <input type="email" id="email" placeholder="Your Email" required>
             <textarea id="message" placeholder="Your Message"></textarea>
-            <button type="submit">Submit</button>
+            <button type="submit" id="Submit">Submit</button>
         </form>
 
+        <script>
+            document.getElementById("Submit").addEventListener("click", function() {
+                let name = document.getElementById("name").value.trim();
+                let email = document.getElementById("email").value.trim();
+                let message = document.getElementById("message").value.trim();
+                
+                let phoneNumber = "919025261799"; // Replace with recipient's WhatsApp number (with country code)
+            
+                // Email validation regex
+                let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            
+                // Validation Checks
+                if (name === "" || email === "" || message === "") {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+            
+                if (!emailPattern.test(email)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+            
+                // Format WhatsApp URL
+                let whatsappUrl = `https://wa.me/${phoneNumber}?text=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0AMessage:%20${encodeURIComponent(message)}`;
+            
+                // Open WhatsApp with message
+                window.open(whatsappUrl, "_blank");
+            });
+            </script>
         <!-- Success Message -->
         <p id="successMessage" class="success-message">✅ Sent Successfully! Thank you for reaching out.</p>
     </section>

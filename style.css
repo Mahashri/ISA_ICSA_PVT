@@ -15,17 +15,29 @@ header {
     border-radius: 10px;
     margin-bottom: 20px;
     color: black;
+    display: flex; /* Enable Flexbox */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Push logo to left and text to center */
 }
 
+/* Logo Styling */
 .logo {
     width: 100px;
+    height: auto; /* Maintain aspect ratio */
 }
 
-.tagline {
-    font-size: 18px;
-    font-weight: bold;
-    color: #555;
+/* Text Wrapper */
+.header-text {
+    text-align: center; /* Center align text */
+    flex-grow: 1; /* Allows the text to take up remaining space */
 }
+
+/* Center align the entire list */
+/* ul {
+    list-style-position: inside; /* Ensures bullets stay within text */
+    /* text-align: center; Centers text
+    padding: 0; Removes default padding
+} */
 
 /* Sections */
 section {
@@ -40,7 +52,7 @@ section {
 
 /* Notify Me Form */
 input, textarea {
-    width: 100%;
+    width: 90%;
     padding: 12px;
     margin: 10px 0;
     border: 1px solid #ccc;

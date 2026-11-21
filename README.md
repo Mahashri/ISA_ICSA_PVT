@@ -27,3 +27,10 @@ Before production release, document the actual website sections and business req
 
 ## Project status
 Website project. This README avoids claiming business functionality that has not been verified from the source.
+
+
+---
+
+## Live Demo
+
+[Open the deployed application](https://mahashri.github.io/ISA_ICSA_PVT/)
